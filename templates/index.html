@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial News Summarizer</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+</head>
+<body>
+    <h1>Financial News Summarizer</h1>
+    <form method="post" action="/">
+        <label for="ticker">Enter Ticker:</label>
+        <input type="text" id="ticker" name="ticker" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if final_output %}
+    <table>
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Summary</th>
+                <th>Label</th>
+                <th>Confidence</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+  
+            <tr>
+                <td>{{ final_output[0] }}</td>
+                <td>{{ final_output[1] }}</td>
+                <td>{{ final_output[2] }}</td>
+                <td>{{ final_output[3] }}</td>
+                <td>
+                    <a href="{{ final_output[4] }}" target="_blank">{{ final_output[4] }}</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    {% endif %}
+</body>
+</html>
