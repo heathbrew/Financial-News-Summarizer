@@ -1,0 +1,3 @@
+pip install textblob
+pip install --upgrade sumy
+
